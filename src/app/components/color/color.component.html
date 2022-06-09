@@ -1,0 +1,7 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+</div>
+
+<ul *ngFor = "let color of colors" class="list-group">
+    <li class="list-group-item">{{color.id}} - {{color.colorName}}</li>
+    
+  </ul>

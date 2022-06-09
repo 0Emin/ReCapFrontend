@@ -1,0 +1,26 @@
+<div *ngIf="dataLoaded==false" class="spinner-border text-primary" role="status">
+</div>
+<table class = "table">
+    <thead>
+        <tr>
+            <th>Kiralama numarası</th>
+            <th>Araba numarası</th>
+            <th>Marka İsmi</th>
+            <th>İsim Soyİsim</th>
+            <th>kiralama tarihi</th>
+            <th>teslim tarihi</th>
+        </tr>
+    </thead>
+    <tr *ngFor = "let rental of rentals">
+        <td>{{rental.rentalId}}</td>
+        <td>{{rental.carId}}</td>
+        <td>{{rental.brandName}}</td>
+        <td>{{rental.fullName}}</td>
+        <td>{{rental.rentDate}}</td>
+        <td>{{rental.returnDate}}</td>
+    </tr>
+</table>
+© 2022 GitHub, Inc.
+Terms
+Privacy
+Se
