@@ -10,7 +10,7 @@ import { ResponseModel } from '../models/responseModel';
 })
 export class ColorService {
 
-  apiUrl = "https://localhost:44341/api/"
+  apiUrl = "https://localhost:44341/api";
  
   constructor(private httpClient:HttpClient) { }
 
