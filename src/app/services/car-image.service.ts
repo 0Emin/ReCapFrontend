@@ -5,19 +5,19 @@ import { CarImage } from '../models/carImage';
 import { ListResponseModel } from '../models/listResponseModel';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class CarImageService {
-  apiUrl="https://localhost:44341/api/"
-  constructor(private httpClient:HttpClient) { }
+  apiUrl = 'https://localhost:44341/api/';
+  constructor(private httpClient: HttpClient) {}
 
-  getCarImages():Observable<ListResponseModel<CarImage>>{
-    let newPath=this.apiUrl+"carImages/getall";
+  getCarImages(): Observable<ListResponseModel<CarImage>> {
+    let newPath = this.apiUrl + 'CarImages/getall';
     return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
   }
 
-  getCarImagesByCarId(carId:number):Observable<ListResponseModel<CarImage>>{
-    let newPath=this.apiUrl+"carImages/getbycarıd?carId="+carId;
+  getCarImagesByCarId(carId: number): Observable<ListResponseModel<CarImage>> {
+    let newPath = this.apiUrl + 'CarImages/getbycarıd?carId=' + carId;
     return this.httpClient.get<ListResponseModel<CarImage>>(newPath);
   }
 }

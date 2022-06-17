@@ -1,11 +1,11 @@
 <body class="text-center">
   <main class="form-signin">
-    <form formGroup = "loginForm">
-      <!-- [formGroup] -->
-      <h1 class="h3 mb-3 fw-normal">Giriş Yapınız</h1>
+    <form [formGroup]="loginForm">
+      <h1 class="h3 mb-3 fw-normal">Giriş yapınız</h1>
 
       <div class="form-floating">
         <input
+        
           formControlName="email"
           type="email"
           class="form-control"
@@ -25,15 +25,10 @@
         <label for="floatingPassword">Parola</label>
       </div>
 
-      <!-- <div class="checkbox mb-3">
-        <label>
-          <input type="checkbox" value="remember-me" /> Remember me
-        </label>
-      </div> -->
-      <button class="w-100 btn btn-lg btn-primary" type="submit" (click)="login()">
-        Giriş Yap
+   
+      <button class="w-100 btn btn-lg btn-primary"  (click)="login()">
+        Giriş yap
       </button>
-      <p class="mt-5 mb-3 text-muted">&copy; 2022</p>
     </form>
   </main>
 </body>
