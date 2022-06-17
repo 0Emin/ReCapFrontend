@@ -23,7 +23,13 @@ export class LoginComponent implements OnInit {
     private toastrService:ToastrService,
     private userService:UserService,
     private router:Router,
-    private localStorage:LocalstorageService) { }
+    private localStorage:LocalstorageService) { 
+      
+      if (this.authService.isAuthenticated())
+      {
+        this.router.navigate([""])
+      }
+     }
 
   ngOnInit(): void {
     this.createLoginForm()
@@ -36,6 +42,8 @@ export class LoginComponent implements OnInit {
       password:["",Validators.required],
     })
   }
+
+
 
   login(){
     if (this.loginForm.valid) {
@@ -55,5 +63,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+ 
+    
+  }
+
   
-}

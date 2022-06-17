@@ -46,5 +46,6 @@ export class ColorComponent implements OnInit {
     } else {
       return "list-group-item"
     }
+   
   }
 }

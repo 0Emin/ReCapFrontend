@@ -38,14 +38,12 @@ export class RegisterComponent implements OnInit {
 
   register() {
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value);
       let registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe(
         (response) => {
-          this.toastrService.info(response.message);
-          localStorage.setItem('token', response.data.token.toString());
-          this.router.navigate(['cars']);
-          this.toastrService.success(response.message, 'Registered.');
+          this.toastrService.success("Kayıt Başarılı");
+          this.router.navigate(['/login']);
+          
         },
         (responseError) => {
           /* console.log('olmadı aga1');
