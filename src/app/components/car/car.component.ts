@@ -20,7 +20,7 @@ import { ColorService } from 'src/app/services/color.service';
 export class CarComponent implements OnInit {
   cars: CarDetails[]=[];
   carImages:CarImage[]=[];
-  baseUrl="https://localhost:44306/Uploads/Images/"
+  baseUrl="https://localhost:44341/Uploads/Images/"
   imageOfPath:string;
   filterText="";
   brands: Brand[] = [];

@@ -54,7 +54,7 @@ export class LoginComponent implements OnInit {
         this.authService.decodedTokenKey=this.authService.decodedToken(response.data.token);
         console.log(this.authService.getUserInfo()); 
         this.router.navigate(["/"]);
-        this.toastrService.info("Giriş Yapıldı")
+        this.toastrService.success("Giriş Yapıldı")
         
       },responseError=>{
         //console.log(responseError);

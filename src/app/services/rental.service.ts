@@ -9,7 +9,7 @@ import { ResponseModel } from '../models/responseModel';
   providedIn: 'root'
 })
 export class RentalService {
-  apiUrl="https://localhost:44341/api/Rental/"
+  apiUrl="https://localhost:44341/api/rental/"
   constructor(private httpClient:HttpClient) { }
 
 
