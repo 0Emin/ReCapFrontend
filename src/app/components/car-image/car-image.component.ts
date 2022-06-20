@@ -11,22 +11,21 @@ import { CarImageService } from 'src/app/services/car-image.service';
 })
 export class CarImageComponent implements OnInit {
   carImages:CarImage[]=[];
-   baseUrl="https://localhost:44341/Uploads/Images/"
+    baseUrl="https://localhost:44341/Uploads/Images/"
   // baseUrl="C:\Users\Emin\Desktop\ReCapProject\ReCapProject\WebAPI\wwwroot\Uploads\Images"
   constructor(private carImageService:CarImageService,private activedRoute:ActivatedRoute ) { }
 
   ngOnInit(): void {
     this.activedRoute.params.subscribe(params=>{
-      if (params["carId"]) {
         this.getCarImagesByCarId(params["carId"])
-      }
+        console.log("buradayım")
     })
   }
 
   getCarImagesByCarId(carId:number){
     this.carImageService.getCarImagesByCarId(carId).subscribe(response=>{
       this.carImages=response.data;
-      
+      console.log(response.data)
     })
   }
 

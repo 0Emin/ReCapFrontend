@@ -41,8 +41,7 @@ export class CarComponent implements OnInit {
 
     this.getBrands();
     this.getColors();
-    
-
+    this.image(1);
     this.activatedRoute.params.subscribe(params=>{
       if(params["colorId"] && params["brandId"]){
         this.getCarDetailByColorAndBrand(params["colorId"],params["brandId"])
@@ -64,7 +63,9 @@ export class CarComponent implements OnInit {
  
 
   getCars(){
-    this.carService.getCars().subscribe(response=>{this.cars=response.data});
+    this.carService.getCars().subscribe(response=>{
+      this.cars=response.data
+    });
   }
   getBrands(){
     this.brandService.getBrands().subscribe(response=>{this.brands=response.data});
@@ -115,7 +116,6 @@ export class CarComponent implements OnInit {
       this.imageOfPath= this.baseUrl+imagePath;
       console.log(this.imageOfPath)
     })
-    return this.imageOfPath
-    
+    return this.imageOfPath   
   }
 }

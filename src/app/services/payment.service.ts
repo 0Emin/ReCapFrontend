@@ -11,9 +11,9 @@ import { SingleResponseModel } from '../models/singleResponseModel';
 })
 export class PaymentService {
   apiUrl = 'https://localhost:44341/api/';
-  private dataSource = new ReplaySubject<Rental>(1); //rental türünde kayıt tutuyor.
+  private dataSource = new ReplaySubject<Rental>(1); 
   //dataSource:Rental bunu bi dene
-  currentData = this.dataSource.asObservable(); //döndürülebilir.
+  currentData = this.dataSource.asObservable(); 
 
   constructor(private httpClient: HttpClient) {}
   updateData(data: Rental) {

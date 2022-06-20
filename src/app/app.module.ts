@@ -29,6 +29,8 @@ import { JwtModule } from "@auth0/angular-jwt";
 
 
 
+
+
 export function tokenGetter() {
   
   return localStorage.getItem("access_token");
@@ -52,7 +54,8 @@ export function tokenGetter() {
     BrandAddComponent,
     ColorAddComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+
   ],
   imports: [
     BrowserModule,

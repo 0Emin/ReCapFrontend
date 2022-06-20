@@ -82,7 +82,7 @@ export class AuthService {
             //userName : userName,
             firstName:firstName,
             lastName:lastName,
-            email:emailInfo,
+            email:emailInfo, 
             roles:roles,
 
           }      
