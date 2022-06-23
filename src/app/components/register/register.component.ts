@@ -29,7 +29,7 @@ export class RegisterComponent implements OnInit {
 
   createRegisterForm() {
     this.registerForm = this.formBuilder.group({
-      email: ['', Validators.required],
+      email: ['', [Validators.required,Validators.pattern("[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")]],
       password: ['', Validators.required],
       firstName: ['', Validators.required],
       lastName: ['', Validators.required],
@@ -37,25 +37,16 @@ export class RegisterComponent implements OnInit {
   }
 
   register() {
+    
     if (this.registerForm.valid) {
       let registerModel = Object.assign({}, this.registerForm.value);
       this.authService.register(registerModel).subscribe(
         (response) => {
-          this.toastrService.success("Kayıt Başarılı");
+          this.toastrService.success("Kayıt Başarılı");                              
           this.router.navigate(['/login']);
           
         },
         (responseError) => {
-          /* console.log('olmadı aga1');
-          if (responseError.error.Errors.length > 0) {
-            console.log('olmadı aga2');
-            for (let i = 0; i < responseError.error.Errors.length; i++) {
-              this.toastrService.error(
-                responseError.error.Errors[i].ErrorMessage,
-                'Doğrulama hatası'
-              );
-            }
-          } */
           this.toastrService.error(responseError.error)
         }
       );

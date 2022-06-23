@@ -64,8 +64,8 @@ export class PaymentComponent implements OnInit {
       customerId:0,
     }
      this.paymentService.add(rental).subscribe(response=>{
-      this.toastrService.success(response.message)
-      this.toastrService.success("araç kiralandı")
+      // this.toastrService.success(response.message)
+      this.toastrService.success("Araç Kiralandı")
     },
     (responseError)=>{
       this.toastrService.error(responseError.error)
@@ -93,7 +93,6 @@ export class PaymentComponent implements OnInit {
     const diff = end - start;
     const duration=(diff/(1000*60*60*24))
     this.rentalDay=duration;
-    console.log("geçen süre2",diff,"geçen süre gün",duration);
     this.carService.getByCarId(this.carId).subscribe(response=>{
       const dailyPrice=response.data.dailyPrice
       this.totalAmountInfo=duration*dailyPrice
